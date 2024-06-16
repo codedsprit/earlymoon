@@ -8,19 +8,18 @@ import (
 )
 
 func main() {
-	if len(os.Args) < 2 {
-		log.Fatalf("Usage: %s <domain> [type]", os.Args[0])
+	if len(os.Args) < 3 {
+		log.Fatalf("Usage: %s <domain> <type1> [<type2> ...]", os.Args[0])
 	}
 	domain := os.Args[1]
-	recordType := "A"
-	if len(os.Args) > 2 {
-		recordType = os.Args[2]
-	}
+	recordTypes := os.Args[2:]
 
-	response, err := dns.Query(domain, recordType)
-	if err != nil {
-		log.Fatalf("Failed to query DNS: %v", err)
+	for _, recordType := range recordTypes {
+		response, err := dns.Query(domain, recordType)
+		if err != nil {
+			log.Printf("Failed to query DNS for %s: %v", recordType, err)
+			continue
+		}
+		fmt.Printf("Record Type: %s\n%s\n", recordType, response)
 	}
-
-	fmt.Println(response)
 }
