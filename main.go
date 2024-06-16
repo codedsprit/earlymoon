@@ -1,33 +1,26 @@
 package main
 
 import (
+	"earlymoon/internal/dns"
 	"fmt"
-	"net"
+	"log"
+	"os"
 )
 
 func main() {
-	var website = "facebook.com"
-	iprecords, _ := net.LookupIP(website)
-	cname, _ := net.LookupCNAME(website)
-	nameserver, _ := net.LookupNS(website)
-	for _, ip := range iprecords {
-		fmt.Println(ip)
+	if len(os.Args) < 2 {
+		log.Fatalf("Usage: %s <domain> [type]", os.Args[0])
 	}
-        fmt.Println(cname)
-
-	for _, name := range nameserver {
-                fmt.Println(name)
-	}
-        mxrecords, _ := net.LookupMX(website)
-	for _, mx := range mxrecords {
-		fmt.Println(mx.Host, mx.Pref)
-	}
-         txtrecords, _ := net.LookupTXT(website)
- 
-	for _, txt := range txtrecords {
-		fmt.Println(txt)
+	domain := os.Args[1]
+	recordType := "A"
+	if len(os.Args) > 2 {
+		recordType = os.Args[2]
 	}
 
+	response, err := dns.Query(domain, recordType)
+	if err != nil {
+		log.Fatalf("Failed to query DNS: %v", err)
+	}
 
-
+	fmt.Println(response)
 }
