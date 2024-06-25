@@ -35,7 +35,7 @@ The project is inspird by ***`dig`*** tool, I have created this tool to improve 
 
   - *Manual* : You can directly download the binary of your arch from [**releases**][releases] and run it.
 ```
-./kanha -h
+./earlymoon -h
 ``` 
   </details>
 
