@@ -28,7 +28,7 @@ func PrintBanner() {
 ┏┓┏┓┏┓┃┓┏┏┳┓┏┓┏┓┏┓
 ┗ ┗┻┛ ┗┗┫┛┗┗┗┛┗┛┛┗ v` + Version + `
         ┛` + resetColor + `
-` + boldText + cyanColor + " Query dns fast with earlymoon " + resetColor + `
+` + boldText + cyanColor + " Query dns fast with earlymoon " + resetColor + `
 
 ` + boldText + "Usage:" + resetColor + ` ` + greenColor + boldText + "earlymoon [Flags]" + resetColor + `
 
