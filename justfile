@@ -13,6 +13,8 @@ all: build
 
 build:
   {{GOBUILD}} {{GOFLAGS}} -ldflags '{{ldflags}}' -o "earlymoon" cmd/earlymoon/main.go
+  mkdir -p ~/.local/bin/
+  mv earlymoon ~/.local/bin/
 
 tidy:
   {{GOMOD}} tidy
