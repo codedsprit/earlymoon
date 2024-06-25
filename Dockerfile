@@ -12,7 +12,7 @@ RUN go mod download
 COPY . .
 
 # Build earlymoon
-RUN go build -o earlymoon .
+RUN go build -o earlymoon cmd/earlymoon/main.go 
 
 
 # Ensure the binary is in the correct location and is executable
