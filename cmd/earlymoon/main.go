@@ -2,40 +2,30 @@ package main
 
 import (
 	"earlymoon/internal/dns"
-        "earlymoon/internal/help"
-	"flag"
-	"fmt"
+	"earlymoon/internal/help"
 	"log"
+        "fmt"
 )
 
 func main() {
-	var domain string
-	var recordType string
+	// Parse arguments
+	args := help.ParseArgs()
+	
+	// Handle arguments
+	help.HandleArgs(args)
 
-	flag.StringVar(&domain, "domain", "", "The domain to query (required)")
-	flag.StringVar(&domain, "d", "", "The domain to query (required)")
-	flag.StringVar(&recordType, "type", "", "The type of DNS record to query (required)")
-	flag.StringVar(&recordType, "t", "", "The type of DNS record to query (required)")
-
-	flag.Parse()
-
-	if domain == "" || recordType == "" {
-		flag.Usage()
-		log.Fatalf("Both domain and type are required")
-                help.PrintBanner()
-	}
-
-	response, err := dns.Query(domain, recordType)
+	// Query DNS
+	response, err := dns.Query(args.Domain, args.RecordType)
 	if err != nil {
 		log.Fatalf("Failed to query DNS: %v", err)
 	}
 
 	if len(response) == 0 {
-		fmt.Printf("No %s records found for %s\n", recordType, domain)
+		log.Printf("Maybe wrong args parsed, try help")
 		return
 	}
 
+	// Print response
 	fmt.Println(response)
-
-                help.PrintBanner()
 }
+
