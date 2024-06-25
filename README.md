@@ -15,7 +15,7 @@
 <a href="https://ko-fi.com/roshantiwaree"><img src="https://img.shields.io/badge/support-codedsprit%20-white?logo=kofi&logoColor=blue" alt="Ko-fi"></a>
 
 
-<img src="https://github.com/codedsprit/earlymoon/blob/showcase/earlymoon.png" alt="img" align="right" width="30%" height="20%"></p>
+<img src="https://github.com/codedsprit/earlymoon/blob/showcase/earlymoon.png" alt="img" align="right" width="50%" height="20%"></p>
 [**`Earlymoon`**](/) is a minimimal yet simple **DNS** query tool. **``earlymoon``** can fetch any dns [records](https://github.com/codedsprit/earlymoon/blob/showcase/supported-records.txt) of given domain, which can be a huge take on **``enumeration``** step.
 
 The project is inspird by ***`dig`*** tool, I have created this tool to improve my skills in  **hacking** & **golang** ecosystem.
