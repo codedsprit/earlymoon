@@ -37,7 +37,7 @@ func PrintBanner() {
     ` + yellowColor + boldText + "-t" + resetColor + `       Type of Dns record ` + magentaColor + boldText + `(required)` + resetColor + `
 
 ` + boldText + "Options:" + resetColor + ` ` + greenColor + resetColor + `
-    ` + yellowColor + boldText + "-V" + resetColor + `       Print Version ` + resetColor + `
+    ` + yellowColor + boldText + "-v" + resetColor + `       Print Version ` + resetColor + `
     ` + yellowColor + boldText + "help" + resetColor + `     Display this help message `
 	fmt.Println(banner)
 }
@@ -56,7 +56,7 @@ func ParseArgs() Args {
 	flag.StringVar(&args.Domain, "d", "", "The domain to query (required)")
 	flag.StringVar(&args.RecordType, "type", "", "The type of DNS record to query (required)")
 	flag.StringVar(&args.RecordType, "t", "", "The type of DNS record to query (required)")
-	flag.BoolVar(&args.ShowVersion, "V", false, "print version information")
+	flag.BoolVar(&args.ShowVersion, "v", false, "print version information")
 
 	// Override default usage
 	flag.Usage = func() {
