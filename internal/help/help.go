@@ -1,9 +1,7 @@
 package help
 
 import (
-	"flag"
 	"fmt"
-	"os"
 	
 )
 
@@ -42,47 +40,3 @@ func PrintBanner() {
 	fmt.Println(banner)
 }
 
-// Args holds the command-line arguments
-type Args struct {
-	Domain      string
-	RecordType  string
-	ShowVersion bool
-}
-
-// ParseArgs parses the command-line arguments and checks for unknown arguments
-func ParseArgs() Args {
-	var args Args
-	flag.StringVar(&args.Domain, "domain", "", "The domain to query (required)")
-	flag.StringVar(&args.Domain, "d", "", "The domain to query (required)")
-	flag.StringVar(&args.RecordType, "type", "", "The type of DNS record to query (required)")
-	flag.StringVar(&args.RecordType, "t", "", "The type of DNS record to query (required)")
-	flag.BoolVar(&args.ShowVersion, "v", false, "print version information")
-
-	// Override default usage
-	flag.Usage = func() {
-		PrintBanner()
-	}
-
-	// Parse flags
-	flag.Parse()
-
-	return args
-}
-
-// HandleArgs processes the parsed arguments and performs the corresponding actions
-func HandleArgs(args Args) {
-	if args.ShowVersion {
-		fmt.Println("earlymoon", Version)
-		os.Exit(0)
-	}
-
-	if len(os.Args) == 1 || os.Args[1] == "help" || os.Args[1] == "-h" {
-		PrintBanner()
-		os.Exit(0)
-	}
-
-	if args.Domain == "" || args.RecordType == "" {
-		PrintBanner()
-		os.Exit(1)
-	}
-}
