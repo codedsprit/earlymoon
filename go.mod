@@ -1,4 +1,4 @@
-module earlymoon
+module github.com/codedspit/earlymoon
 
 go 1.22.3
 
