@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+
 	"github.com/codedspit/earlymoon/internal/dns"
 	"github.com/codedspit/earlymoon/internal/help"
 )
@@ -10,7 +11,7 @@ import (
 func main() {
 	// Parse arguments
 	args := help.ParseArgs()
-	
+
 	// Handle arguments
 	help.HandleArgs(args)
 
@@ -28,4 +29,3 @@ func main() {
 	// Print response
 	fmt.Println(response)
 }
-
