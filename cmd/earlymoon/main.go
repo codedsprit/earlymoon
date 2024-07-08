@@ -1,10 +1,10 @@
 package main
 
 import (
-	"earlymoon/internal/dns"
-	"earlymoon/internal/help"
+	"fmt"
 	"log"
-        "fmt"
+	"github.com/codedspit/earlymoon/internal/dns"
+	"github.com/codedspit/earlymoon/internal/help"
 )
 
 func main() {
