@@ -15,7 +15,7 @@
 <a href="https://ko-fi.com/roshantiwaree"><img src="https://img.shields.io/badge/support-codedsprit%20-white?logo=kofi&logoColor=blue" alt="Ko-fi"></a>
 
 
-<img src="https://github.com/codedsprit/earlymoon/blob/showcase/earlymoon.png" alt="img" align="right" width="30%" height="20%"></p>
+<img src="https://github.com/codedsprit/earlymoon/blob/showcase/earlymoon.png" alt="img" align="right" width="40%" height="20%"></p>
 [**`Earlymoon`**](/) is a minimimal yet simple **DNS** query tool. **``earlymoon``** can fetch any dns [records](https://github.com/codedsprit/earlymoon/blob/showcase/supported-records.txt) of given domain, which can be a huge take on **``enumeration``** step.
 
 The project is inspird by ***`dig`*** tool, I have created this tool to improve my skills in  **hacking** & **golang** ecosystem.
@@ -23,7 +23,7 @@ The project is inspird by ***`dig`*** tool, I have created this tool to improve 
 <hr>
 
 ## Features 🍙
-- It's fast and minimal.
+- It's fast.
 - Minimal (*only requires **golang** and coreutils*)
 - Works on all major **Linux** distrubitions, 
 
@@ -35,7 +35,7 @@ The project is inspird by ***`dig`*** tool, I have created this tool to improve 
 
   - *Manual* : You can directly download the binary of your arch from [**releases**][releases] and run it.
 ```
-./kanha -h
+./earlymoon -h
 ``` 
   </details>
 
@@ -95,7 +95,7 @@ Options:
   - Fix code or submit new feature
 
 ## Copying 📜
- `earlymoon` is licensed under the **`MIT LICENSE`** license. 
+ `earlymoon` is licensed under the **`MIT LICENSE`**. 
  
 &nbsp;
 
