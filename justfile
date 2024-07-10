@@ -1,20 +1,20 @@
-#Go parameters
-GOCMD := "go"
-GOBUILD := "go build"
-GOMOD := "go mod"
-GOTEST := "go test"
-GOFLAGS := "-v"
+_default:
+    @just -l
 
-# Check if the operating system is Darwin (macOS)
-ldflags := `if [ $(go env GOOS) != "darwin" ]; then echo '-extldflags "-static"'; else echo '-s -w'; fi`
+alias b := build
+alias t := tidy
 
-# Tasks
-all: build
-
+# Builds the binary
+[linux]
 build:
-  {{GOBUILD}} {{GOFLAGS}} -ldflags '{{ldflags}}' -o "earlymoon" cmd/earlymoon/main.go
-  mkdir -p ~/.local/bin/
-  mv earlymoon ~/.local/bin/
+   @mkdir -p bin
+   @go build -ldflags ' -s -w' -o "bin/earlymoon" cmd/earlymoon/main.go
+
+# Builds  the binary
+[macos]
+build:
+   @mkdir -p bin
+   @go build -ldflags '-extldflags "-static"' -o "bin/earlymoon" cmd/earlymoon/main.go
 
 tidy:
-  {{GOMOD}} tidy
+   @go mod tidy
