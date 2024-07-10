@@ -24,6 +24,7 @@
                 shellHook = ''
                   echo "Building the app ..."
                   just build
+                  ./bin/earlymoon && echo "Build successfull" || "Build failure"
                 '';
               };
             };
