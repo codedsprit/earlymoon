@@ -19,8 +19,5 @@ jobs:
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@main
 
-      - name: Install just
-        run: nix profile install nixpkgs#just
-
-      - name: just build
-        run: just build
+      - name: build and test the app
+        run: nix develop .
