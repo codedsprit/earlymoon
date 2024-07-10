@@ -33,7 +33,7 @@ The project is inspird by ***`dig`*** tool, I have created this tool to improve 
   <details> <summary><code>Binary </code></summary>
     &nbsp;
 
-  - *Manual* : You can directly download the binary of your arch from [**releases**][releases] and run it.
+  - *Manual* : You can directly download the binary from [`releases`](https://github.com/codedsprit/earlymoon/releases) and run it.
 ```
 ./earlymoon -h
 ``` 
